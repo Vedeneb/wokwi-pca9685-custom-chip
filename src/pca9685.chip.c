@@ -607,8 +607,8 @@ static void on_chan_timer_event(void *data)
 // --- Private helpers ---
 static inline uint8_t addr_pins_to_addr(chip_desc_t *chip)
 {
-  uint8_t addr_val = 0;
-  for (int a = 0; a < MAX_ADDR_PINS; a++)
+  uint8_t addr_val = 1;
+  for (int a = 1; a <= MAX_ADDR_PINS; a++)
   {
     addr_val |= pin_read(chip->addr_pins[a]) << a;
   }
